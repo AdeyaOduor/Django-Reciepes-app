@@ -98,10 +98,11 @@ def load(request):
     new = Recipe.objects.create(name='Pizza', description='Italian-styled home-made dough recipe along with instructions on how to turn it into pizza 🍕',
                                 prep='0:30:00', cook='1:30:00', servings=2, image='media/image_lHvewhO.jpg', ingredients='Sample list of ingredients', 
                                 directions='''## Step 1 
-something here
-## Step 2 
+## something here
+Step 2 
 something else here
-## Step 3
+Step 3 ## 
+
 last step''', notes='', author=request.user)
     new.save()
     new1 = Recipe.objects.create(name='Cheese', description='Some sample cheese recipe 🧀',
@@ -140,7 +141,7 @@ something else here
 ## Step 3
 last step''', notes='', author=request.user)
     new4.save()
-    # image_url = 'https://images.media-allrecipes.com/userphotos/1044986.jpg'
+    image_url = 'https://images.media-allrecipes.com/userphotos/1044986.jpg'
     # name, description, prep, cook, servings, image, ingredients, directions, notes, author
     
     return 200
